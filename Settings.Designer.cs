@@ -31,7 +31,6 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.grpRightText = new System.Windows.Forms.GroupBox();
             this.tlpRightText = new System.Windows.Forms.TableLayoutPanel();
-            this.rightTextOverrideControl = new LiveSplit.MemoryInfo.TextStyleOverrideControl();
             this.txtRightText = new System.Windows.Forms.TextBox();
             this.tlpBackground = new System.Windows.Forms.TableLayoutPanel();
             this.lblBackgroundColor = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.btnBackgroundColor2 = new System.Windows.Forms.Button();
             this.grpLeftText = new System.Windows.Forms.GroupBox();
             this.tlpLeftText = new System.Windows.Forms.TableLayoutPanel();
-            this.leftTextOverrideControl = new LiveSplit.MemoryInfo.TextStyleOverrideControl();
             this.txtLeftText = new System.Windows.Forms.TextBox();
             this.grpMemoryAddresses = new System.Windows.Forms.GroupBox();
             this.btnRemoveRow = new System.Windows.Forms.Button();
@@ -49,6 +47,8 @@
             this.lblProcessName = new System.Windows.Forms.Label();
             this.txtProcessName = new System.Windows.Forms.TextBox();
             this.dgvMemoryAddresses = new System.Windows.Forms.DataGridView();
+            this.rightTextOverrideControl = new LiveSplit.MemoryInfo.TextStyleOverrideControl();
+            this.leftTextOverrideControl = new LiveSplit.MemoryInfo.TextStyleOverrideControl();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.NumBytes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,18 +111,6 @@
             this.tlpRightText.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpRightText.Size = new System.Drawing.Size(447, 90);
             this.tlpRightText.TabIndex = 0;
-            // 
-            // rightTextOverrideControl
-            // 
-            this.rightTextOverrideControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rightTextOverrideControl.Location = new System.Drawing.Point(3, 28);
-            this.rightTextOverrideControl.Name = "rightTextOverrideControl";
-            this.rightTextOverrideControl.OverrideColor = false;
-            this.rightTextOverrideControl.OverrideFont = false;
-            this.rightTextOverrideControl.OverridingColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.rightTextOverrideControl.OverridingFont = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.rightTextOverrideControl.Size = new System.Drawing.Size(441, 59);
-            this.rightTextOverrideControl.TabIndex = 0;
             // 
             // txtRightText
             // 
@@ -238,18 +226,6 @@
             this.tlpLeftText.Size = new System.Drawing.Size(447, 90);
             this.tlpLeftText.TabIndex = 0;
             // 
-            // leftTextOverrideControl
-            // 
-            this.leftTextOverrideControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.leftTextOverrideControl.Location = new System.Drawing.Point(3, 28);
-            this.leftTextOverrideControl.Name = "leftTextOverrideControl";
-            this.leftTextOverrideControl.OverrideColor = false;
-            this.leftTextOverrideControl.OverrideFont = false;
-            this.leftTextOverrideControl.OverridingColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.leftTextOverrideControl.OverridingFont = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.leftTextOverrideControl.Size = new System.Drawing.Size(441, 59);
-            this.leftTextOverrideControl.TabIndex = 0;
-            // 
             // txtLeftText
             // 
             this.txtLeftText.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -327,8 +303,33 @@
             this.dgvMemoryAddresses.RowHeadersVisible = false;
             this.dgvMemoryAddresses.Size = new System.Drawing.Size(447, 122);
             this.dgvMemoryAddresses.TabIndex = 0;
+            this.dgvMemoryAddresses.Columns[Type.Index].ValueType = typeof(AddressType);
             this.dgvMemoryAddresses.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvMemoryAddresses_CellValidating);
             this.dgvMemoryAddresses.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMemoryAddresses_CellValueChanged);
+            // 
+            // rightTextOverrideControl
+            // 
+            this.rightTextOverrideControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rightTextOverrideControl.Location = new System.Drawing.Point(3, 28);
+            this.rightTextOverrideControl.Name = "rightTextOverrideControl";
+            this.rightTextOverrideControl.OverrideColor = false;
+            this.rightTextOverrideControl.OverrideFont = false;
+            this.rightTextOverrideControl.OverridingColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.rightTextOverrideControl.OverridingFont = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.rightTextOverrideControl.Size = new System.Drawing.Size(441, 59);
+            this.rightTextOverrideControl.TabIndex = 0;
+            // 
+            // leftTextOverrideControl
+            // 
+            this.leftTextOverrideControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.leftTextOverrideControl.Location = new System.Drawing.Point(3, 28);
+            this.leftTextOverrideControl.Name = "leftTextOverrideControl";
+            this.leftTextOverrideControl.OverrideColor = false;
+            this.leftTextOverrideControl.OverrideFont = false;
+            this.leftTextOverrideControl.OverridingColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.leftTextOverrideControl.OverridingFont = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.leftTextOverrideControl.Size = new System.Drawing.Size(441, 59);
+            this.leftTextOverrideControl.TabIndex = 0;
             // 
             // ID
             // 

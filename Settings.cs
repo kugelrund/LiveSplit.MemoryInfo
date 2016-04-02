@@ -221,7 +221,7 @@ namespace LiveSplit.MemoryInfo
         private void btnAddRow_Click(object sender, EventArgs e)
         {
             int index = dgvMemoryAddresses.Rows.Add();
-            dgvMemoryAddresses.Rows[index].Cells[ID.Index].Value = "{" + index + "}";
+            dgvMemoryAddresses.Rows[index].Cells[ID.Index].Value = "{" + (index + 1) + "}";
             dgvMemoryAddresses.Rows[index].Cells[Type.Index].Value = AddressType.Int;
             addressesChanged = true;
         }
@@ -235,7 +235,7 @@ namespace LiveSplit.MemoryInfo
 
                 for (int i = index; i < dgvMemoryAddresses.Rows.Count; i += 1)
                 {
-                    dgvMemoryAddresses.Rows[i].Cells[ID.Index].Value = "{" + i + "}";
+                    dgvMemoryAddresses.Rows[i].Cells[ID.Index].Value = "{" + (i + 1) + "}";
                 }
             }
             addressesChanged = true;
