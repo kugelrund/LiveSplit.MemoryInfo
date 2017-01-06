@@ -1,12 +1,25 @@
 <updates>
-    <update version="1.0">
-        <files>
-            <file path="Components/LiveSplit.MemoryInfo.dll" status="changed"/>
-        </files>
-        <changelog>
-            <change>
-                Initial release.
-            </change>
-        </changelog>
-    </update>
+  <update version="1.1">
+    <files>
+      <file path="Components/LiveSplit.MemoryInfo.dll" status="changed"/>
+    </files>
+    <changelog>
+      <change>
+        Fixed address types other than "Int" not being accepted
+      </change>
+      <change>
+        Displayed ID's now start at 0 rather than 1
+      </change>
+    </changelog>
+  </update>
+  <update version="1.0">
+    <files>
+      <file path="Components/LiveSplit.MemoryInfo.dll" status="changed"/>
+    </files>
+    <changelog>
+      <change>
+        Initial release.
+      </change>
+    </changelog>
+  </update>
 </updates>

@@ -63,7 +63,8 @@ namespace LiveSplit.MemoryInfo
             LeftText = "Text";
             RightText = "";
 
-            Type.DataSource = Enum.GetValues(typeof(AddressType));
+            Type.ValueType = typeof(AddressType);
+            Type.Items.AddRange(AddressType.Int, AddressType.Float, AddressType.String);
             
             cmbGradientType.DataBindings.Add("SelectedItem", this, "GradientString", false, DataSourceUpdateMode.OnPropertyChanged);
             btnBackgroundColor1.DataBindings.Add("BackColor", this, "BackgroundColor1", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -221,7 +222,7 @@ namespace LiveSplit.MemoryInfo
         private void btnAddRow_Click(object sender, EventArgs e)
         {
             int index = dgvMemoryAddresses.Rows.Add();
-            dgvMemoryAddresses.Rows[index].Cells[ID.Index].Value = "{" + (index + 1) + "}";
+            dgvMemoryAddresses.Rows[index].Cells[ID.Index].Value = "{" + index + "}";
             dgvMemoryAddresses.Rows[index].Cells[Type.Index].Value = AddressType.Int;
             addressesChanged = true;
         }
@@ -235,7 +236,7 @@ namespace LiveSplit.MemoryInfo
 
                 for (int i = index; i < dgvMemoryAddresses.Rows.Count; i += 1)
                 {
-                    dgvMemoryAddresses.Rows[i].Cells[ID.Index].Value = "{" + (i + 1) + "}";
+                    dgvMemoryAddresses.Rows[i].Cells[ID.Index].Value = "{" + i + "}";
                 }
             }
             addressesChanged = true;
