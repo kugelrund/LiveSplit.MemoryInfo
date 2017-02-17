@@ -8,7 +8,7 @@ namespace LiveSplit.MemoryInfo
 {
     enum AddressType
     {
-        Int, Float, String
+        Int, Float, String, Timespan
     }
 
     struct MemoryAddressInfo
@@ -64,7 +64,7 @@ namespace LiveSplit.MemoryInfo
             RightText = "";
 
             Type.ValueType = typeof(AddressType);
-            Type.Items.AddRange(AddressType.Int, AddressType.Float, AddressType.String);
+            Type.Items.AddRange(AddressType.Int, AddressType.Float, AddressType.String, AddressType.Timespan);
             
             cmbGradientType.DataBindings.Add("SelectedItem", this, "GradientString", false, DataSourceUpdateMode.OnPropertyChanged);
             btnBackgroundColor1.DataBindings.Add("BackColor", this, "BackgroundColor1", false, DataSourceUpdateMode.OnPropertyChanged);

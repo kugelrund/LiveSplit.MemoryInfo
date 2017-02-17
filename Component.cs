@@ -161,6 +161,9 @@ namespace LiveSplit.MemoryInfo
                         case AddressType.String:
                             values[i] = pointers[i].DerefString(process, addressInfos[i].numBytes);
                             break;
+                        case AddressType.Timespan:
+                            values[i] = TimeSpan.FromSeconds(pointers[i].Deref<float>(process)).ToString(@"hh\:mm\:ss\:ff");
+                            break;
                     }
                 }
 
