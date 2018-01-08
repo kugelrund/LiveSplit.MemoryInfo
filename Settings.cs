@@ -140,7 +140,7 @@ namespace LiveSplit.MemoryInfo
                 // type
                 addressInfo.type = (AddressType) row.Cells[Type.Index].Value;
                 // num
-                addressInfo.numBytes = (int)row.Cells[NumBytes.Index].Value;
+                addressInfo.numBytes = int.Parse(row.Cells[NumBytes.Index].Value.ToString());
 
                 addressInfos.Add(addressInfo);
             }
@@ -156,8 +156,8 @@ namespace LiveSplit.MemoryInfo
             }
 
             if (e.ColumnIndex == Type.Index)
-            { 
-                if (dgvMemoryAddresses.Rows[e.RowIndex].Cells[Type.Index].Value as string == "String")
+            {
+                if ((AddressType)dgvMemoryAddresses.Rows[e.RowIndex].Cells[Type.Index].Value == AddressType.String)
                 {
                     dgvMemoryAddresses.Rows[e.RowIndex].Cells[NumBytes.Index].ReadOnly = false;
                 }

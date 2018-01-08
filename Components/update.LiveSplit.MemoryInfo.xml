@@ -1,12 +1,19 @@
 <updates>
+  <update version="1.3">
+    <files>
+      <file path="Components/LiveSplit.MemoryInfo.dll" status="changed"/>
+    </files>
+    <changelog>
+      <change>Fixed a bug where String length can't be specified.</change>
+      <change>Fixed parsing of value length.</change>
+    </changelog>
+  </update>
   <update version="1.2">
     <files>
       <file path="Components/LiveSplit.MemoryInfo.dll" status="changed"/>
     </files>
     <changelog>
-      <change>
-	  Added Timespan display
-      </change>
+      <change>Added Timespan display</change>
     </changelog>
   </update>
   <update version="1.1">
@@ -14,9 +21,7 @@
       <file path="Components/LiveSplit.MemoryInfo.dll" status="changed"/>
     </files>
     <changelog>
-      <change>
-        Fixed address types other than "Int" not being accepted
-      </change>
+      <change>Fixed address types other than "Int" not being accepted</change>
       <change>
         Displayed ID's now start at 0 rather than 1
       </change>
@@ -27,9 +32,7 @@
       <file path="Components/LiveSplit.MemoryInfo.dll" status="changed"/>
     </files>
     <changelog>
-      <change>
-        Initial release.
-      </change>
+      <change>Initial release.</change>
     </changelog>
   </update>
 </updates>
